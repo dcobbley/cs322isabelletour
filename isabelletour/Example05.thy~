@@ -10,8 +10,6 @@ begin
 definition addOne :: "int => int"
  where "addOne n = n+1"
 
-definition addTwo :: "int \<Rightarrow> int"
- where "addTwo n = n+2"
 (* The Isabelle environment will also let you use special symbols
    that are common in mathematical work but hard to type on a regular
    keyboard.  For example, the function arrow can also be written in
@@ -29,8 +27,6 @@ definition addTwo :: "int \<Rightarrow> int"
 (* How about defining a function that will take an integer input and
    output its square?
 *)
-definition square :: "int => int"
- where "square n = n*n"
 
 (* YOUR CODE GOES HERE! *)
 
@@ -43,7 +39,7 @@ value "addOne (addOne 2)"
    and evaluate some simple expressions to check that it's working
    as you expect.
 *)
-value "square(square(3) + square(4))"
+
 (* YOUR CODE GOES HERE! *)
 
 (* Function with more than one argument can be described using
@@ -108,10 +104,7 @@ value "sum [1,2,3,4,5]"
    To illustrate that point, define a new function in the space below
    that will cause an infinite loop, and see how Isabelle responds ...
 *)
-(*
-function loop :: "int \<Rightarrow> int"
-  where "loop x = loop x"
-*)
+
 (* YOUR CODE GOES HERE! *)
 
 (* You will know that you've succeeded if the output window shows
@@ -163,7 +156,7 @@ fun countup :: "int \<Rightarrow> int \<Rightarrow> int list"
 *)
 
 fun sm :: "int list \<Rightarrow> int"
- where "sm (x # xs) = x + sm xs" | "sm[] = 42"
+ where "sm (x # xs) = x + sm xs"
   (* notice the message in the output window here ... *)
 
 value "sm [1,2,3]"

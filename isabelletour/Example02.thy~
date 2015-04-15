@@ -31,7 +31,7 @@ value "6*7::int"
    the numbers from 1 to 5. *)
 
 (* YOUR CODE GOES HERE! *)
-value "1+2+3+4+5::int" 
+
 (* Note that the "value" command mostly leaves undefined
    variables untouched, unless it can simplify them away: *)
 

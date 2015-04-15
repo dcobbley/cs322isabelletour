@@ -1,3 +1,4 @@
+Use addpkg on linux boxes
 ------------------------------------------------------------
 CS 322 Spring 2015, Lab 3:
 
@@ -17,7 +18,7 @@ and Gerwin Klein.  (It has also been adapted to use some of
 the same terms and ideas as in the previous, interpretour
 lab.)  As it happens, Tobias Nipkow is one of the primary
 developers of Isabelle, and Gerwin Klein lead the work on the
-formal verification of the seL4 microkernel.  (In fact,
+formal verification of the se4 microkernel.  (In fact,
 Gerwin was also the developer of the jflex lexical analyzer
 generator that we used in CS 321!)  The full text of the book
 (in pdf format), together with code and slides, is available
