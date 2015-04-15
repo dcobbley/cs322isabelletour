@@ -10,25 +10,21 @@ type_synonym Var = string
 datatype IExpr = VarExpr  Var
                | IntExpr int
                | PlusExpr IExpr IExpr
-               | MultExpr IExpr IExpr
 
 definition one where "one = IntExpr 1"
 definition two where "two = IntExpr 2"
 definition ex1 where "ex1 = PlusExpr one two"
 definition ex2 where "ex2 = PlusExpr ex1 ex1"
-definition ex4 where "ex4 = MultExpr one two"
 
 value ex1
 value ex2
-value ex4
 
 definition vx  where "vx  = VarExpr ''x''"
 definition vy  where "vy  = VarExpr ''y''"
 definition ex3 where "ex3 = PlusExpr vx one"
-definition xyz where "xyz = MultExpr vx (PlusExpr vy two)"
 
 value ex3
-value xyz
+
 (* Now what does an IExpr represent?  In particular,
    how do we account for the presence of variables?
 *)
@@ -40,7 +36,6 @@ fun eval :: "IExpr \<Rightarrow> mem \<Rightarrow> int"
  where "eval (VarExpr v)    m = m v"
      | "eval (IntExpr n)    m = n"
      | "eval (PlusExpr l r) m = eval l m + eval r m"
-     | "eval (MultExpr l r) m = eval l m * eval r m"
 
 (* the following commands need a little update if we want to
    see some numeric results ...
@@ -49,15 +44,11 @@ value "eval one"
 value "eval two"
 value "eval ex1"
 value "eval ex2"
-value "eval ex4"
-value "eval xyz"
 
 (* How about an example that uses variables: *)
 value ex3
 value "eval ex3 memzero"
 value "eval ex3 memalt"
-value "eval ex4 memalt"
-value "eval xyz memalt"
 
 (* Repeat the exercise from the previous theory file:
    Go back and extend the definition of IExpr to include
